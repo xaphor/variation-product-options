@@ -1,0 +1,460 @@
+/**
+ * Frontend styles for Variation Product Options - Modern UI/UX
+ *
+ * @package VariationProductOptions
+ * @since 1.1.0
+ */
+
+/* === VARIABLES & SETUP === */
+:root {
+	--vpo-primary-color: #0073aa;
+	--vpo-primary-hover: #005a87;
+	--vpo-text-color: #3c434a;
+	--vpo-label-color: #1d2327;
+	--vpo-border-color: #dcdcde;
+	--vpo-bg-color: #f6f7f7;
+	--vpo-white: #ffffff;
+	--vpo-success-color: #2271b1;
+	--vpo-error-color: #d63638;
+	--vpo-radius: 8px;
+	--vpo-transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* === MAIN CONTAINER === */
+.vpo-product-options {
+	margin: 2em 0;
+	padding: clamp(15px, 4vw, 30px);
+	background: var(--vpo-white);
+	border: 1px solid var(--vpo-border-color);
+	border-radius: var(--vpo-radius);
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* === FIELD WRAPPER === */
+.vpo-field {
+	margin-bottom: 25px !important;
+	padding-bottom: 25px !important;
+	border-bottom: 1px solid #e7e7e7 !important;
+	transition: background-color var(--vpo-transition);
+}
+
+.vpo-field:last-child {
+	border-bottom: none !important;
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+/* === FIELD HEADER (ICON + LABEL) === */
+.vpo-field-header {
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.vpo-field-icon {
+	margin-right: 12px;
+	color: var(--vpo-primary-color);
+	transition: transform 0.3s ease-in-out;
+}
+.vpo-field:hover .vpo-field-icon {
+	transform: rotate(-10deg) scale(1.1);
+}
+
+.vpo-field-icon svg {
+	width: 20px;
+	height: 20px;
+}
+
+.vpo-field-label {
+	font-size: 1.1em !important;
+	font-weight: 600 !important;
+	color: var(--vpo-label-color) !important;
+	margin: 0 !important;
+}
+
+.vpo-field-label .required {
+	color: var(--vpo-error-color);
+	font-weight: 400;
+	margin-left: 4px;
+}
+
+/* === FIELD INPUT WRAPPER === */
+.vpo-field-input {
+	padding-left: 32px; /* Align with label text when icon is present */
+}
+.vpo-field:not(.vpo-has-icon) .vpo-field-input {
+	padding-left: 0;
+}
+
+.vpo-price-suffix {
+	color: #555;
+	font-size: 0.9em;
+	margin-left: 8px;
+	font-weight: 500;
+}
+
+/* === RADIO BUTTONS (CUSTOM) === */
+.vpo-radio-group {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.vpo-radio-option {
+	display: flex;
+	align-items: center;
+	padding: 12px 15px;
+	background: var(--vpo-white);
+	border: 1px solid var(--vpo-border-color);
+	border-radius: var(--vpo-radius);
+	cursor: pointer;
+	transition: all var(--vpo-transition);
+}
+
+.vpo-radio-option:hover {
+	border-color: var(--vpo-primary-color);
+	background: #f0f7ff;
+	transform: translateY(-2px);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.vpo-radio-option input[type="radio"] {
+	display: none; /* Hide default radio */
+}
+
+.vpo-radio-label {
+	position: relative;
+	padding-left: 30px;
+	color: var(--vpo-text-color);
+	font-weight: 500;
+	transition: color var(--vpo-transition);
+}
+
+/* Custom radio circle */
+.vpo-radio-label::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 20px;
+	height: 20px;
+	border: 2px solid var(--vpo-border-color);
+	border-radius: 50%;
+	background: var(--vpo-white);
+	transition: all var(--vpo-transition);
+}
+
+/* Custom radio inner circle */
+.vpo-radio-label::after {
+	content: '';
+	position: absolute;
+	left: 5px;
+	top: 50%;
+	transform: translateY(-50%) scale(0);
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: var(--vpo-primary-color);
+	transition: transform 0.15s ease-in-out;
+}
+
+.vpo-radio-option:has(input:checked) {
+	border-color: var(--vpo-primary-color);
+	background: #f0f7ff;
+}
+
+.vpo-radio-option:has(input:checked) .vpo-radio-label {
+	color: var(--vpo-primary-color);
+	font-weight: 600;
+}
+
+.vpo-radio-option:has(input:checked) .vpo-radio-label::before {
+	border-color: var(--vpo-primary-color);
+}
+
+.vpo-radio-option:has(input:checked) .vpo-radio-label::after {
+	transform: translateY(-50%) scale(1);
+}
+
+/* === CHECKBOXES (CUSTOM) === */
+.vpo-checkbox-option {
+	display: flex;
+	align-items: center;
+	padding: 12px 15px;
+	background: var(--vpo-white);
+	border: 1px solid var(--vpo-border-color);
+	border-radius: var(--vpo-radius);
+	cursor: pointer;
+	transition: all var(--vpo-transition);
+}
+
+.vpo-checkbox-option:hover {
+	border-color: var(--vpo-primary-color);
+	background: #f0f7ff;
+	transform: translateY(-2px);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.vpo-checkbox-option input[type="checkbox"] {
+	display: none; /* Hide default checkbox */
+}
+
+.vpo-checkbox-label {
+	position: relative;
+	padding-left: 30px;
+	color: var(--vpo-text-color);
+	font-weight: 500;
+	transition: color var(--vpo-transition);
+}
+
+/* Custom checkbox square */
+.vpo-checkbox-label::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 20px;
+	height: 20px;
+	border: 2px solid var(--vpo-border-color);
+	border-radius: 4px;
+	background: var(--vpo-white);
+	transition: all var(--vpo-transition);
+}
+
+/* Custom checkbox checkmark */
+.vpo-checkbox-label::after {
+	content: '';
+	position: absolute;
+	left: 7px;
+	top: 50%;
+	width: 6px;
+	height: 12px;
+	border: solid var(--vpo-white);
+	border-width: 0 3px 3px 0;
+	transform: translateY(-65%) rotate(45deg) scale(0);
+	transition: transform 0.15s ease-in-out;
+}
+
+.vpo-checkbox-option:has(input:checked) {
+	border-color: var(--vpo-primary-color);
+	background: #f0f7ff;
+}
+
+.vpo-checkbox-option:has(input:checked) .vpo-checkbox-label {
+	color: var(--vpo-primary-color);
+	font-weight: 600;
+}
+
+.vpo-checkbox-option:has(input:checked) .vpo-checkbox-label::before {
+	background: var(--vpo-primary-color);
+	border-color: var(--vpo-primary-color);
+}
+
+.vpo-checkbox-option:has(input:checked) .vpo-checkbox-label::after {
+	transform: translateY(-65%) rotate(45deg) scale(1);
+}
+
+/* === RADIO SWITCH (CUSTOM) === */
+.vpo-switch-wrapper {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.vpo-switch-inner {
+	position: relative;
+	display: inline-flex;
+	background: var(--vpo-bg-color);
+	border: 1px solid var(--vpo-border-color);
+	border-radius: 50px;
+	padding: 5px;
+}
+
+.vpo-switch-option {
+	position: relative;
+	z-index: 2;
+}
+
+.vpo-switch-option input[type="radio"] {
+	display: none;
+}
+
+.vpo-switch-label {
+	padding: 8px 20px;
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--vpo-text-color);
+	cursor: pointer;
+	display: block;
+	transition: color var(--vpo-transition);
+}
+
+.vpo-switch-option:has(input:checked) .vpo-switch-label {
+	color: var(--vpo-white);
+	font-weight: 600;
+}
+
+.vpo-switch-slider {
+	position: absolute;
+	z-index: 1;
+	top: 5px;
+	left: 5px; /* JS will update this */
+	width: 0; /* JS will update this */
+	height: calc(100% - 10px);
+	background: var(--vpo-primary-color);
+	border-radius: 50px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+	transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fallback for no :has() support */
+.vpo-switch-option.active .vpo-switch-label {
+	color: var(--vpo-white);
+	font-weight: 600;
+}
+
+/* === SELECT DROPDOWN (CUSTOM) === */
+.vpo-select-wrapper {
+	position: relative;
+}
+
+.vpo-select {
+	appearance: none;
+	width: 100%;
+	padding: 12px 40px 12px 15px;
+	border: 1px solid var(--vpo-border-color);
+	border-radius: var(--vpo-radius);
+	font-size: 1em;
+	background-color: var(--vpo-white);
+	cursor: pointer;
+	transition: all var(--vpo-transition);
+}
+
+.vpo-select:hover {
+	border-color: var(--vpo-primary-color);
+}
+
+.vpo-select:focus {
+	outline: none;
+	border-color: var(--vpo-primary-color);
+	box-shadow: 0 0 0 2px rgba(0, 115, 170, 0.2);
+}
+
+.vpo-select-wrapper::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	width: 8px;
+	height: 8px;
+	border-style: solid;
+	border-color: var(--vpo-text-color);
+	border-width: 0 2px 2px 0;
+	transform: translateY(-60%) rotate(45deg);
+	pointer-events: none;
+	transition: transform var(--vpo-transition);
+}
+
+.vpo-select-wrapper:has(.vpo-select:focus)::after {
+	transform: translateY(-40%) rotate(225deg);
+}
+
+
+/* === DATEPICKER === */
+.vpo-datepicker-wrapper {
+	position: relative;
+}
+
+.vpo-datepicker {
+	width: 100%;
+	padding: 12px 15px;
+	border: 1px solid var(--vpo-border-color);
+	border-radius: var(--vpo-radius);
+	font-size: 1em;
+	background-color: var(--vpo-white);
+	cursor: pointer;
+	transition: all var(--vpo-transition);
+}
+/* We use a text input, so we need to style the jQuery UI datepicker */
+.ui-datepicker {
+	width: auto;
+	padding: 10px;
+	background: var(--vpo-white) !important;
+	border: 1px solid var(--vpo-border-color) !important;
+	border-radius: var(--vpo-radius);
+	box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.ui-datepicker-header {
+	background: var(--vpo-primary-color) !important;
+	color: var(--vpo-white) !important;
+	border: none !important;
+	border-radius: var(--vpo-radius) var(--vpo-radius) 0 0;
+}
+.ui-datepicker-prev, .ui-datepicker-next {
+	color: var(--vpo-white) !important;
+}
+.ui-state-default {
+	background: var(--vpo-bg-color) !important;
+	border: 1px solid var(--vpo-border-color) !important;
+	text-align: center !important;
+}
+.ui-state-highlight,
+.ui-state-active {
+	background: var(--vpo-primary-color) !important;
+	color: var(--vpo-white) !important;
+}
+
+
+/* === CONDITIONAL FIELDS === */
+.vpo-conditional-field {
+	display: none;
+	background-color: #fcf8e3; /* A subtle highlight for conditional fields */
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: var(--vpo-radius);
+	border: 1px solid #f2e7c3;
+}
+.vpo-conditional-field.vpo-field-visible {
+	display: block;
+}
+
+
+/* === TOTAL PRICE DISPLAY === */
+.vpo-total-price {
+	margin-top: 30px;
+	padding-top: 20px;
+	border-top: 2px dashed var(--vpo-border-color);
+	font-size: 1.2em;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: var(--vpo-label-color);
+}
+
+.vpo-price-amount {
+	color: var(--vpo-primary-color);
+	font-weight: 700;
+	font-size: 1.3em;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+	.vpo-field-input {
+		padding-left: 0;
+	}
+	.vpo-switch-inner {
+		flex-direction: column;
+		border-radius: var(--vpo-radius);
+		width: 100%;
+	}
+	.vpo-switch-slider {
+		display: none; /* Slider doesn't work well in vertical layout */
+	}
+	.vpo-switch-option {
+		text-align: center;
+	}
+	.vpo-switch-option:has(input:checked) {
+		background: var(--vpo-primary-color);
+	}
+}

@@ -1,0 +1,79 @@
+# WordPress and Development Files
+wp-content/
+wp-admin/
+wp-includes/
+wp-config.php
+wp-load.php
+wp-settings.php
+index.php
+wp-blog-header.php
+wp-activate.php
+wp-trackback.php
+wp-mail.php
+wp-comments-post.php
+wp-cron.php
+xmlrpc.php
+
+# Dependencies
+/vendor/
+composer.lock
+node_modules/
+package-lock.json
+yarn.lock
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+
+# OS Files
+.DS_Store
+.env
+.env.local
+.env.*.local
+
+# Logs and Debug Files
+*.log
+debug.log
+wp-debug.log
+*.tmp
+
+# Temporary Documentation (Debugging/Development)
+# Keep only essential docs: README.md and prd.md
+VISUAL_EXPLANATION.md
+VARIATION_FIELDS_FIX.md
+VARIATION_ASSIGNMENT_DEBUG.md
+TEST_INSTRUCTIONS.md
+TESTING_GUIDE.md
+SESSION_SUMMARY.md
+QUICK_REFERENCE.md
+PRICE_NOT_ADDING_QUICK_FIX.md
+PRICE_NOT_ADDING_DEBUG.md
+pagesource.md
+GEMINI_FIX_REPORT.md
+FIX_VARIATION_DISPLAY.md
+FIX_COMPLETE.md
+FINAL_FIX_COMPLETE.md
+ERROR_REPORT.md
+DOCUMENTATION_INDEX.md
+DATABASE_SAVE_DEBUG.md
+BUG_FIX_REPORT.md
+COMPREHENSIVE_FIX.md
+debug.md
+
+# Build and Distribution
+dist/
+build/
+*.zip
+*.tar.gz
+
+# IDE Specific
+.vscode/settings.json
+.idea/workspace.xml
+.idea/misc.xml

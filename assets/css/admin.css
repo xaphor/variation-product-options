@@ -1,0 +1,144 @@
+/**
+ * Admin styles for Variation Product Options.
+ *
+ * @package VariationProductOptions
+ * @since 1.0.0
+ */
+
+/* Form sections */
+.vpo-form-section {
+	margin: 20px 0;
+	padding: 20px;
+	background: #fff;
+	border: 1px solid #ccd0d4;
+	border-radius: 4px;
+}
+
+.vpo-form-section h2 {
+	margin-top: 0;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+/* Field rows */
+.vpo-field-row {
+	margin-bottom: 20px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	background: #fafafa;
+}
+
+.vpo-field-header {
+	display: flex;
+	align-items: center;
+	padding: 12px 15px;
+	background: #f0f0f0;
+	border-bottom: 1px solid #ddd;
+	cursor: move;
+}
+
+.vpo-field-handle {
+	margin-right: 10px;
+	color: #666;
+	cursor: move;
+}
+
+.vpo-field-title {
+	flex: 1;
+	margin: 0;
+}
+
+.vpo-field-content {
+	padding: 15px;
+}
+
+.vpo-field-content .form-table {
+	margin: 0;
+}
+
+.vpo-field-content .form-table th {
+	width: 200px;
+	padding: 15px 10px 15px 0;
+}
+
+.vpo-field-content .form-table td {
+	padding: 15px 10px;
+}
+
+/* Options container */
+.vpo-options-container {
+	margin-bottom: 10px;
+}
+
+.vpo-option-row {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 8px;
+}
+
+.vpo-option-row input {
+	flex: 1;
+}
+
+.vpo-option-row .small-text {
+	width: 100px;
+}
+
+/* Meta box */
+.vpo-meta-box {
+	padding: 10px 0;
+}
+
+.vpo-meta-box ul {
+	list-style: disc;
+	margin-left: 20px;
+}
+
+.vpo-meta-box li {
+	margin: 8px 0;
+}
+
+/* Select2 styling */
+.vpo-select2 {
+	width: 100% !important;
+}
+
+/* Buttons */
+.vpo-add-field {
+	margin-top: 10px;
+}
+
+.vpo-remove-field,
+.vpo-remove-option {
+	text-decoration: none;
+}
+
+.vpo-remove-field:hover,
+.vpo-remove-option:hover {
+	text-decoration: underline;
+}
+
+/* Conditional logic */
+.vpo-condition-value-wrapper {
+	margin-left: 10px;
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+	.vpo-field-content .form-table th,
+	.vpo-field-content .form-table td {
+		display: block;
+		width: 100%;
+		padding: 10px 0;
+	}
+
+	.vpo-option-row {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.vpo-option-row input {
+		width: 100%;
+	}
+}
