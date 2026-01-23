@@ -45,7 +45,7 @@ wp-debug.log
 *.tmp
 
 # Temporary Documentation (Debugging/Development)
-# Keep only essential docs: README.md and prd.md
+# Keep only essential docs: README.md
 VISUAL_EXPLANATION.md
 VARIATION_FIELDS_FIX.md
 VARIATION_ASSIGNMENT_DEBUG.md
@@ -66,6 +66,9 @@ DATABASE_SAVE_DEBUG.md
 BUG_FIX_REPORT.md
 COMPREHENSIVE_FIX.md
 debug.md
+prd.md
+CODE_CHANGES.md
+GIT_SETUP.md
 
 # Build and Distribution
 dist/
